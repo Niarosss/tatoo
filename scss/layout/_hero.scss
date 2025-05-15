@@ -13,22 +13,17 @@
 
   &__video {
     position: absolute;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     z-index: -2;
     filter: blur(3px);
+    transform: scale(1.1);
   }
   &__overlay {
     position: absolute;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     background: #1f1f1f74;
   }
