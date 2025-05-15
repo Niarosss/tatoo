@@ -1,0 +1,50 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: var(--heading-h2-size);
+  font-weight: var(----heading-h2-font-weight);
+  line-height: var(--heading-h2-line-height);
+  color: var(--color-heading);
+  margin: 0 0 3rem 0;
+  letter-spacing: var(--letter-spacing-header);
+  text-transform: uppercase;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.title-line::before,
+.title-line::after {
+  content: '';
+  flex-grow: 1; /* Займають доступний простір */
+  height: 1px;
+  background-color: var(--color-divider);
+  opacity: 0;
+  transform: scaleX(0); /* Початковий масштаб - 0 */
+  /* Точка масштабування - центр */
+  transition: transform 2s ease-out, opacity 0.5s ease-out 0.5s;
+}
+.title-line::before {
+  transform-origin: right;
+}
+.title-line::after {
+  transform-origin: left;
+}
+
+.title-line.appeared {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-line.appeared::before,
+.title-line.appeared::after {
+  transform: scaleX(1); /* Кінцевий масштаб - 1 */
+  opacity: 1;
+}
+
+.section-info {
+  text-align: center;
+  color: var(--color-muted);
+  margin: 0 0 2rem 0;
+}

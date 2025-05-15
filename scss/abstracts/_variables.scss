@@ -1,0 +1,100 @@
+:root {
+  /* === 🎨 Кольори === */
+  --color-bg: #0f0f0f; /* Основний фон (чорний) */
+  --color-bg-transparent: hsla(0, 0%, 6%, 0.7); /* Основний фон (чорний з прозорістю) */
+  --color-text: #eaeaea; /* Основний текст (м’який білий) */
+  --color-heading: #f2f2f2; /* Яскравий білий для заголовків */
+  --color-muted: #a0a0a0; /* Другорядний текст, описи */
+  --color-placeholder: #6e6e6e; /* Placeholder або "вимкнений" текст */
+
+  --color-accent: #c02525; /* Акцентний темно-червоний */
+  --color-accent-dark: #9a1f1f; /* Темніший акцент при hover */
+
+  --color-ui-dark: #1a1a1a; /* Темно-сірий для блоків/фонів */
+  --color-divider: #303030; /* Роздільники, лінії */
+
+  --color-success: #4caf50; /* Повідомлення про успішну дію */
+  --color-error: #e53935; /* Повідомлення про помилку */
+  --color-warning: #ff9800; /* Попередження */
+  --color-overlay: rgba(0, 0, 0, 0.6); /* Фонове затемнення (модалки тощо) */
+
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --border: 1px solid rgba(255, 255, 255, 0.05);
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+
+  /* === 🔠 Шрифт === */
+  --font-base: 'Oswald', sans-serif; /* Основний шрифт */
+
+  /* === 📐 Адаптивні базовий розмір шрифту === */
+  --base-font-size-min: 1rem; /* Мінімальний розмір (16px) */
+  --base-font-size-pref: 0.9vw; /* Бажаний розмір, залежний від ширини */
+  --base-font-size-max: 1.125rem; /* Максимальний розмір (18px) */
+  --base-font-size: clamp(
+    var(--base-font-size-min),
+    var(--base-font-size-pref),
+    var(--base-font-size-max)
+  );
+  --text-base-size: var(--base-font-size);
+  --text-line-height: 1.6;
+
+  /* === 📐 Адаптивні заголовки === */
+  --heading-h1-min: 2rem; /* 32px */
+  --heading-h1-pref: 4vw; /* Адаптивно, але з меншим коефіцієнтом */
+  --heading-h1-max: 3.4rem; /* 56px - обмеження зверху */
+  --heading-h1-size: clamp(
+    var(--heading-h1-min),
+    var(--heading-h1-pref),
+    var(--heading-h1-max)
+  );
+  --heading-h1-line-height: 1.2;
+  --heading-h1-font-weight: 700;
+
+  --heading-h2-min: 1.75rem; /* 28px */
+  --heading-h2-pref: 3.5vw;
+  --heading-h2-max: 2.6rem;
+  --heading-h2-size: clamp(
+    var(--heading-h2-min),
+    var(--heading-h2-pref),
+    var(--heading-h2-max)
+  );
+  --heading-h2-line-height: 1.3;
+  --heading-h2-font-weight: 600;
+
+  --heading-h3-min: 1rem; /* 24px */
+  --heading-h3-pref: 2vw;
+  --heading-h3-max: 1.8rem; /* 40px */
+  --heading-h3-size: clamp(
+    var(--heading-h3-min),
+    var(--heading-h3-pref),
+    var(--heading-h3-max)
+  );
+  --heading-h3-line-height: 1.4;
+  --heading-h3-font-weight: 500;
+
+  --font-weight-normal: 400; /* Стандартна товщина */
+  --font-weight-bold: 700; /* Жирний текст */
+  --letter-spacing-header: 0.06em; /* Відстань між літерами */
+  --letter-spacing-text: 0.03em; /* Відстань між літерами для тексту */
+
+  /* === 📐 Розміри і відступи === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  /* === ⏱️ Анімації і переходи === */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* === 📐Border - radius === */
+  --border-radius-base: 4px; /* Базовий розмір */
+  --border-radius-sm: calc(var(--border-radius-base) * 1);
+  --border-radius-md: calc(var(--border-radius-base) * 2); /* x2 */
+  --border-radius-lg: calc(var(--border-radius-base) * 3); /* x3 */
+  --border-radius-xl: calc(var(--border-radius-base) * 4); /* x4 */
+
+  /* === 📐Різне === */
+  --container-width: 1288px; /* Максимальна ширина контейнера */
+}

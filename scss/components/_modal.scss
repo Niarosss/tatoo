@@ -1,0 +1,232 @@
+@use '../abstracts' as *;
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-shadow, rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  transition: opacity 0.3s ease;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &.is-hiding {
+    opacity: 0; /* Згасання фону */
+  }
+
+  &.is-hiding &__content {
+    animation: modalFadeOut 0.3s forwards; /* Анімація згасання та зменшення контенту */
+  }
+
+  &__content {
+    background: var(--color-ui-dark);
+    padding: 40px;
+    color: var(--color-text);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-divider);
+    width: 500px;
+    max-width: 100%;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: auto;
+    animation: modalFadeIn 0.3s ease;
+    will-change: transform;
+
+    & ul {
+      padding: 1.2rem;
+      list-style-type: square;
+
+      & li::marker {
+        color: var(--color-muted);
+      }
+    }
+    @include respond-max(md) {
+      padding: 20px;
+      max-width: 90vw;
+    }
+
+    @include respond-max(xs) {
+      padding: 16px;
+      max-width: 95vw;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: var(--color-heading);
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    padding: 16px 0;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Додамо плавність змінам */
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background-color: var(--color-text);
+      transform: rotate(45deg) translate(-50%, -50%);
+      transform-origin: top left;
+      transition: background-color 0.3s ease; /* Плавність для ліній */
+    }
+
+    &:after {
+      transform: rotate(-45deg) translate(-50%, -50%);
+    }
+
+    &:hover,
+    &:active {
+      &:before,
+      &:after {
+        background-color: var(--color-accent);
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      &:before,
+      &:after {
+        background-color: var(--color-accent);
+        outline: var(--color-text) solid 2px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 1rem;
+    position: relative;
+    color: var(--color-ui-dark);
+    background-color: var(--color-text);
+    border: none;
+    box-shadow: var(--box-shadow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:disabled {
+      cursor: not-allowed !important;
+      background-color: var(--color-divider);
+      color: var(--color-placeholder);
+
+      &:hover {
+        transform: none;
+      }
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+.image-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+
+  &--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__content {
+    max-width: 94%;
+    max-height: 90%;
+    display: block;
+    object-fit: contain;
+    cursor: default;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &--visible &__content {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

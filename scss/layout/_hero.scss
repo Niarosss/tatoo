@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+/* Головний банер */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &__video {
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    filter: blur(3px);
+  }
+  &__overlay {
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background: #1f1f1f74;
+  }
+  &__title {
+    font-size: var(--heading-h1-size);
+    font-weight: var(----heading-h1-font-weight);
+    line-height: var(--heading-h1-line-height);
+    color: var(--color-heading);
+    letter-spacing: var(--letter-spacing-header);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  & p {
+    margin: 20px 0;
+    font-size: var(--heading-h3-size);
+    color: var(--color-text);
+    font-weight: 300;
+  }
+
+  &__button {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: transparent;
+    border: 2px solid var(--color-text);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    @include respond-max(sm) {
+      padding: 10px 20px;
+    }
+
+    &:hover {
+      background-color: var(--color-text);
+      color: #0f0f0f;
+      border-color: var(--color-text);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    &:focus-visible {
+      outline: var(--color-text) solid 2px;
+    }
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

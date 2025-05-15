@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: url('../img/pattern.svg') repeat var(--color-bg);
+  font-family: var(--font-base);
+  font-size: var(--text-base-size);
+  line-height: var(--text-line-height);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-text);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+::selection {
+  background: var(--color-muted);
+  color: var(--color-text);
+}
+::-moz-selection {
+  background: var(--color-ui-dark);
+  color: var(--color-text);
+}
+
+#contacts,
+#about,
+#faq,
+#services,
+#gallery {
+  scroll-margin-top: 40px;
+}

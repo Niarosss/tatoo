@@ -1,0 +1,74 @@
+@use '../abstracts' as *;
+
+.scroller {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 3;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: var(--color-muted);
+    transition: fill 0.3s ease;
+  }
+
+  @include respond-max(md) {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.6rem;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  &:not(.show) {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), opacity 0.3s ease;
+
+    &:hover {
+      transform: translateY(0) scale(1.05);
+      background-color: rgba(0, 0, 0, 0.7);
+
+      & .scroller__icon {
+        fill: var(--color-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline: var(--color-text) solid 2px;
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.95);
+      transition: transform 0.1s ease;
+    }
+  }
+}

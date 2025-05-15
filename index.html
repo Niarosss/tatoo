@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Створюємо мистецтво на вашій шкірі! Тату студія TattooLab пропонує унікальні татуювання, розробку індивідуальних ескізів, ретельну корекцію та професійне перекриття. Досвідчені майстри, безпечні умови, творчий підхід у [Місто]."
+    />
+    <meta
+      name="keywords"
+      content="тату, татуювання, тату студія, тату салон, ескіз тату, зробити тату, майстер тату, тату [Місто], корекція тату, перекриття тату, мінімалізм тату, реалізм тату, лайнворк тату, TattooLab тату студія, ціна тату, вартість тату"
+    />
+    <meta name="author" content="Niaros" />
+    <meta property="og:locale" content="uk_UA" />
+    <title>TattooLab</title>
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader">
+        <svg viewBox="0 0 32 32">
+          <circle r="14" cx="16" cy="16" />
+        </svg>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo zoom-in">
+          <img class="header__logo-image" src="img/logo.svg" alt="" />
+          <span class="header__logo-text">TattooLab</span>
+        </a>
+
+        <!-- Burger -->
+        <button class="header__burger" id="burger">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="hidden">Open / Close</span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="nav" id="nav">
+          <ul class="nav__list blur-in">
+            <li><a href="#services" class="nav__link">Послуги</a></li>
+            <li><a href="#gallery" class="nav__link">Галерея</a></li>
+            <li><a href="#faq" class="nav__link">Часті питання</a></li>
+            <li><a href="#about" class="nav__link">Про нас</a></li>
+            <li><a href="#contact" class="nav__link">Контакти</a></li>
+            <li>
+              <button
+                class="nav__button button"
+                data-modal-open="sign-up"
+                aria-controls="sign-up"
+              >
+                Записатись
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Головний банер -->
+      <section class="hero">
+        <video
+          class="hero__video"
+          autoplay
+          loop
+          muted
+          onloadstart="this.playbackRate = 0.6;"
+        >
+          <source src="./video/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <h1 class="hero__title slide-up">Мистецтво на шкірі</h1>
+          <p class="slide-up">Найкращі татуювання для тебе!</p>
+        </div>
+        <a href="#gallery" class="hero__button button slide-up">Переглянути роботи</a>
+      </section>
+      <!-- Про нас -->
+      <section class="about-us" id="about">
+        <div class="container">
+          <h2 class="section-title title-line slide-up">Про нас</h2>
+          <div class="about-us__content fade-in">
+            <div class="about-us__text slide-left">
+              <p>
+                Ми – команда професіоналів, які створюють унікальні татуювання на шкірі.
+              </p>
+              <p>
+                Наша студія використовує тільки найкраще обладнання та якісні фарби, щоб
+                кожен клієнт був задоволений результатом.
+              </p>
+            </div>
+            <img
+              class="about-us__image slide-right"
+              src="./img/masters.png"
+              alt="Майстри
+            тату-студії TattooLab"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Послуги -->
+      <section class="services" id="services">
+        <div class="container">
+          <h2 class="section-title title-line slide-up">Наші послуги</h2>
+          <div class="services__list">
+            <div class="services__item slide-left" data-modal-open="sketch" tabindex="0">
+              <svg class="services__icon">
+                <use xlink:href="./img/icons.svg#icon-sketch" />
+              </svg>
+              <h3 class="services__item-title">Ескізи</h3>
+              <p class="services__item-text">
+                Індивідуальні ескізи, створені саме під твій стиль та ідею.
+              </p>
+            </div>
+
+            <div class="services__item slide-left" data-modal-open="tattoo" tabindex="0">
+              <svg class="services__icon">
+                <use xlink:href="./img/icons.svg#icon-tattoo" />
+              </svg>
+              <h3 class="services__item-title">Татуювання</h3>
+              <p class="services__item-text">
+                Втілюємо тату будь-якої складності — від мінімалізму до реалізму.
+              </p>
+            </div>
+
+            <div
+              class="services__item slide-right"
+              data-modal-open="correction"
+              tabindex="0"
+            >
+              <svg class="services__icon">
+                <use xlink:href="./img/icons.svg#icon-refresh" />
+              </svg>
+              <h3 class="services__item-title">Корекція татуювань</h3>
+              <p class="services__item-text">
+                Даємо нове життя старим тату — покращення, оновлення, переробка.
+              </p>
+            </div>
+
+            <div
+              class="services__item slide-right"
+              data-modal-open="consultation"
+              tabindex="0"
+            >
+              <svg class="services__icon">
+                <use xlink:href="./img/icons.svg#icon-chat" />
+              </svg>
+              <h3 class="services__item-title">Консультації</h3>
+              <p class="services__item-text">
+                Обговоримо ідею, підберемо стиль, відповімо на всі питання.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Галерея -->
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <h2 class="section-title title-line slide-up">Галерея</h2>
+
+          <div class="gallery__wrapper">
+            <div class="gallery__container">
+              <div class="gallery__brick zoom-in">
+                <img
+                  class="gallery__img"
+                  src="./img/img1.jpg"
+                  loading="lazy"
+                  alt="Опис зображення 1"
+                />
+              </div>
+              <div class="gallery__brick zoom-in">
+                <img
+                  class="gallery__img"
+                  src="./img/img2.jpg"
+                  loading="lazy"
+                  alt="Опис зображення 2"
+                />
+              </div>
+              <div class="gallery__brick zoom-in">
+                <img
+                  class="gallery__img"
+                  src="./img/img3.jpg"
+                  loading="lazy"
+                  alt="Опис зображення 3"
+                />
+              </div>
+              <div class="gallery__brick zoom-in">
+                <img
+                  class="gallery__img"
+                  src="./img/img4.jpg"
+                  loading="lazy"
+                  alt="Опис зображення 4"
+                />
+              </div>
+              <div class="gallery__brick zoom-in">
+                <img
+                  class="gallery__img"
+                  src="./img/img5.jpg"
+                  loading="lazy"
+                  alt="Опис зображення 5"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery__controls">
+            <button
+              class="gallery__btn gallery__btn--prev slide-right"
+              aria-label="Попереднє"
+            >
+              <svg class="gallery__btn-icon">
+                <use xlink:href="./img/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+
+            <div class="gallery__pagination blur-in"></div>
+
+            <button
+              class="gallery__btn gallery__btn--next slide-left"
+              aria-label="Наступне"
+            >
+              <svg class="gallery__btn-icon">
+                <use xlink:href="./img/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="gallery__text fade-in">
+            <p>Хочете побачити більше наших робіт та побачити, як народжуються ідеї?</p>
+            <p>
+              Завітайте на наші сторінки в соціальних мережах! Там ми ділимося найновішими
+              проектами та процесом їх створення.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="faq" id="faq">
+        <div class="container">
+          <h2 class="section-title title-line slide-up">ЧАСТІ ПИТАННЯ</h2>
+          <p class="section-info fade-in">
+            У цьому розділі ви знайдете відповіді на найчастіші запитання щодо наших
+            послуг. Якщо ви не знайшли потрібної інформації, будь ласка, зв'яжіться з
+            нами.
+          </p>
+          <ul class="faq__list">
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Як записатись на сеанс?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  Ви можете залишити заявку через кнопку "Записатись" на нашому сайті, в
+                  розділі «Контакти», заповнивши форму. Також ви можете зв'язатися з нами
+                  через повідомлення в [Instagram, Facebook, TikTok].
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Яка вартість консультації?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  Первинна консультація з майстром є безкоштовною. Під час консультації ви
+                  зможете обговорити вашу ідею, розмір, стиль та інші деталі майбутнього
+                  татуювання, а також отримати точну інформацію про вартість.
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Яка вартість розробки ескізу?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  Вартість розробки індивідуального ескізу залежить від складності та
+                  розміру роботи. Деякі прості ескізи можуть бути безкоштовними.
+                  Детальніше це питання обговорюється з майстром під час консультації.
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Чи проводите ви навчання на тату майстра?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  На даний момент ми не проводимо повноцінних курсів навчання для тату
+                  майстрів. Однак, у нас можуть бути індивідуальні майстер-класи або
+                  програми для підвищення кваліфікації. Будь ласка, зв'яжіться з нами для
+                  отримання актуальної інформації.
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Чи є у вас подарункові сертифікати?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  Так, у нас ви можете придбати подарункові сертифікати на будь-яку суму
+                  або послугу. Це чудовий подарунок для тих, хто мріє про татуювання!
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                З якого віку можна робити татуювання?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  Відповідно до законодавства України, татуювання неповнолітнім особам (до
+                  18 років) робляться лише за письмовою згодою батьків або опікунів та в
+                  їх присутності. Ми суворо дотримуємося цих правил.
+                </p>
+              </div>
+            </li>
+            <li class="faq__item slide-up">
+              <button class="faq__question js-faq-question">
+                Який досвід роботи ваших майстрів?
+                <span class="faq__icon"></span>
+              </button>
+              <div class="faq__answer js-faq-answer">
+                <p class="faq__answer-text">
+                  У нашій студії працюють досвідчені та кваліфіковані майстри з
+                  багаторічним стажем у різних стилях татуювання. Ви можете ознайомитися з
+                  їхніми портфоліо в наших соціальних мережах.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="contact fade-in" id="contact">
+        <div class="container">
+          <h2 class="section-title slide-up">Контакти</h2>
+          <p class="section-info fade-in">
+            Для зв'язку з нами залиште заявку через форму зворотьного зв'язку або
+            скористайтеся вказаними контактами.
+          </p>
+          <div class="contact__content">
+            <form
+              class="contact__form form slide-left"
+              data-delay="500"
+              action="#"
+              method="post"
+              novalidate
+            >
+              <div class="form__group">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="name2"
+                  name="name"
+                  placeholder=" "
+                  required
+                  aria-describedby="name2-error"
+                />
+                <label class="form__label" for="name2">Ім’я</label>
+                <p
+                  class="form__error-message"
+                  aria-live="assertive"
+                  data-for="name2"
+                  id="name2-error"
+                ></p>
+              </div>
+              <div class="form__group">
+                <span class="form__phone-prefix">+380</span>
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="phone2"
+                  name="phone"
+                  placeholder=" "
+                  maxlength="9"
+                  required
+                  aria-describedby="phone2-error"
+                />
+                <label class="form__label" for="phone2">Телефон</label>
+                <p
+                  class="form__error-message"
+                  aria-live="assertive"
+                  data-for="phone2"
+                  id="phone2-error"
+                ></p>
+              </div>
+              <div class="form__group">
+                <textarea
+                  class="form__textarea"
+                  id="message"
+                  name="message"
+                  placeholder=" "
+                  required
+                  aria-describedby="message-error"
+                ></textarea>
+                <label class="form__label" for="message">Повідомлення</label>
+                <p
+                  class="form__error-message"
+                  aria-live="assertive"
+                  data-for="message"
+                  id="message-error"
+                ></p>
+              </div>
+              <div class="form__group">
+                <label class="form__checkbox">
+                  <input
+                    type="checkbox"
+                    id="personal2"
+                    required
+                    aria-describedby="personal2-error"
+                  />
+                  <span class="form__checkmark"></span>
+                  <span class="form__checkbox-text">
+                    Я погоджуюсь на обробку персональних даних
+                  </span>
+                  <p
+                    class="form__error-message"
+                    aria-live="assertive"
+                    data-for="personal2"
+                    id="personal2-error"
+                  ></p>
+                </label>
+              </div>
+              <button type="submit" class="form__button button js-submit">
+                <span class="form__button-text">Надіслати запит</span>
+                <span class="form__button-success" role="alert" hidden>
+                  <svg class="form__button-check" viewBox="0 0 24 24">
+                    <path
+                      d="M5 13l4 4L19 7"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="form__button-success-text">Успішно надіслано!</span>
+                </span>
+              </button>
+            </form>
+            <div class="contact__info slide-right">
+              <div class="contact__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d393.36072874949883!2d23.6985586751047!3d37.933097567852506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc3b911f5d43%3A0xbc3d31eee4a56809!2sDildo%20Tattoo%20Studio!5e0!3m2!1suk!2sua!4v1744799667311!5m2!1suk!2sua"
+                  width="100%"
+                  height="100%"
+                  title="Google Maps"
+                  style="border: 0"
+                  allowfullscreen=""
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="contact__details">
+                <a
+                  class="contact__link"
+                  href="https://maps.app.goo.gl/AukbukHQD1aGR3n38"
+                  target="_blank"
+                >
+                  <svg class="contact__icon">
+                    <use xlink:href="./img/icons.svg#icon-map"></use>
+                  </svg>
+                  Nefelis 10, Paleo Faliro</a
+                >
+
+                <div class="contact__info-item">
+                  <p class="contact__text">Щоденно</p>
+                  <p class="contact__text">10:00 - 20:00</p>
+                </div>
+
+                <a href="tel:+380441234567" class="contact__link">
+                  <svg class="contact__icon">
+                    <use xlink:href="./img/icons.svg#icon-phone"></use></svg
+                  >+38 (044) 123-45-67</a
+                >
+
+                <a href="mailto:info@tattood.com" class="contact__link">
+                  <svg class="contact__icon">
+                    <use xlink:href="./img/icons.svg#icon-email"></use></svg
+                  >info@tattood.com</a
+                >
+
+                <div class="contact__socials">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="contact__social-link"
+                    aria-label="Перейти на Instagram сторінку тату студії"
+                  >
+                    <svg class="contact__icon">
+                      <use xlink:href="./img/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="contact__social-link"
+                    aria-label="Перейти на Facebook сторінку тату студії"
+                  >
+                    <svg class="contact__icon">
+                      <use xlink:href="./img/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="contact__social-link"
+                    aria-label="Перейти на TikTok сторінку тату студії"
+                  >
+                    <svg class="contact__icon">
+                      <use xlink:href="./img/icons.svg#icon-tiktok"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Футер -->
+    <footer>
+      <div class="container">
+        <small>&copy; 2025 TattooLab | Powered by Niaros</small>
+      </div>
+    </footer>
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="sign-up"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sign-up-title"
+      hidden
+    >
+      <div class="modal__content">
+        <button
+          class="modal__close-btn"
+          type="button"
+          aria-label="Закрити вікно"
+          data-modal-close="sign-up"
+          aria-controls="sign-up"
+        ></button>
+
+        <h3 class="modal__title" id="sign-up-title">Запис на консультацію</h3>
+        <p class="modal__text">Введіть свої дані, і ми зв'яжемося з вами!</p>
+
+        <form class="form form--in-modal" action="#" method="post" novalidate>
+          <div class="form__group">
+            <input
+              class="form__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder=" "
+              required
+              aria-describedby="name-error"
+            />
+            <label class="form__label" for="name">Ім’я</label>
+            <p
+              class="form__error-message"
+              aria-live="assertive"
+              data-for="name"
+              id="name-error"
+            ></p>
+          </div>
+          <div class="form__group">
+            <span class="form__phone-prefix">+380</span>
+            <input
+              class="form__input"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder=" "
+              maxlength="9"
+              autocomplete="tel-national"
+              required
+              aria-describedby="phone-error"
+            />
+            <label class="form__label" for="phone">Телефон</label>
+            <p
+              class="form__error-message"
+              aria-live="assertive"
+              data-for="phone"
+              id="phone-error"
+            ></p>
+          </div>
+          <div class="form__group">
+            <label class="form__checkbox">
+              <input
+                type="checkbox"
+                id="personal"
+                required
+                aria-describedby="personal-error"
+              />
+              <span class="form__checkmark"></span>
+              <span class="form__checkbox-text">
+                Я погоджуюсь на обробку персональних даних
+              </span>
+            </label>
+            <p
+              class="form__error-message"
+              aria-live="assertive"
+              data-for="personal"
+              id="personal-error"
+            ></p>
+          </div>
+          <button type="submit" class="form__button button js-submit">
+            <span class="form__button-text">Записатись</span>
+            <span class="form__button-success" role="alert" hidden>
+              <svg class="form__button-check" viewBox="0 0 24 24">
+                <path
+                  d="M5 13l4 4L19 7"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="form__button-success-text">Успішно надіслано!</span>
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="sketch"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sketch-title"
+      hidden
+    >
+      <div class="modal__content">
+        <button
+          class="modal__close-btn"
+          type="button"
+          aria-label="Закрити вікно"
+          data-modal-close="sketch"
+          aria-controls="sketch"
+        ></button>
+        <h2 class="modal__title">Ескізи для татуювань</h2>
+        <p class="modal__text">
+          Ми створюємо унікальні ескізи татуювань, повністю враховуючи ваші індивідуальні
+          побажання, стиль та концепцію. Наші майстри допоможуть візуалізувати вашу ідею
+          на папері або в цифровому форматі, щоб ви могли точно уявити, як виглядатиме
+          ваше майбутнє татуювання.
+        </p>
+        <ul>
+          <li>Індивідуальний підхід до кожної ідеї.</li>
+          <li>Розробка ескізів будь-якої складності.</li>
+          <li>Урахування розміру та місця розташування татуювання.</li>
+          <li>Можливість внесення правок.</li>
+          <li>Консультація з майстром перед створенням ескізу.</li>
+        </ul>
+        <button
+          class="modal__button button"
+          data-service="Ескізи"
+          data-modal-open="sign-up"
+          aria-controls="sign-up"
+        >
+          Записатися на ескіз
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="tattoo"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tattoo-title"
+      hidden
+    >
+      <div class="modal__content">
+        <button
+          class="modal__close-btn"
+          type="button"
+          aria-label="Закрити вікно"
+          data-modal-close="tattoo"
+          aria-controls="tattoo"
+        ></button>
+        <h2 class="modal__title">Послуга татуювання</h2>
+        <p class="modal__text">
+          Наші досвідчені майстри втілять у життя татуювання будь-якої складності та в
+          різноманітних стилях — від мінімалістичних ліній до складних реалістичних
+          композицій. Ми використовуємо тільки якісні матеріали та сучасне обладнання,
+          гарантуючи безпеку та відмінний результат.
+        </p>
+        <ul>
+          <li>Татуювання будь-якої складності та стилю.</li>
+          <li>Робота з вашими ескізами або розробка індивідуальних.</li>
+          <li>Суворе дотримання санітарних норм.</li>
+          <li>Консультація перед сеансом та догляд після.</li>
+        </ul>
+        <button
+          class="modal__button button"
+          data-service="Татуювання"
+          data-modal-open="sign-up"
+          aria-controls="sign-up"
+        >
+          Записатися на татуювання
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="correction"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="correction-title"
+      hidden
+    >
+      <div class="modal__content">
+        <button
+          class="modal__close-btn"
+          type="button"
+          aria-label="Закрити вікно"
+          data-modal-close="correction"
+          aria-controls="correction"
+        ></button>
+        <h2 class="modal__title">Корекція татуювань</h2>
+        <p class="modal__text">
+          Якщо ваше старе татуювання втратило свою чіткість, вицвіло або потребує
+          виправлення, наші майстри допоможуть повернути йому первісний вигляд або навіть
+          повністю його перетворити. Ми здійснюємо корекцію контурів, кольору, а також
+          перекриття неякісних робіт.
+        </p>
+        <ul>
+          <li>Виправлення нерівних ліній та контурів.</li>
+          <li>Оновлення яскравості кольорів.</li>
+          <li>Перекриття старих або небажаних татуювань.</li>
+          <li>Консультація щодо можливостей корекції.</li>
+        </ul>
+        <button
+          class="modal__button button"
+          data-service="Корекція татуювань"
+          data-modal-open="sign-up"
+          aria-controls="sign-up"
+        >
+          Записатися на корекцію
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      id="consultation"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consultation-title"
+      hidden
+    >
+      <div class="modal__content">
+        <button
+          class="modal__close-btn"
+          type="button"
+          aria-label="Закрити вікно"
+          data-modal-close="consultation"
+          aria-controls="consultation"
+        ></button>
+        <h2 class="modal__title">Консультація з татуювання</h2>
+        <p class="modal__text">
+          Якщо у вас є питання щодо майбутнього татуювання, ви не впевнені у виборі стилю,
+          розміру або місця розташування, наші майстри проведуть детальну консультацію. Ми
+          допоможемо вам визначитися з ідеєю, підберемо оптимальний стиль, розповімо про
+          процес нанесення та догляд за татуюванням.
+        </p>
+        <ul>
+          <li>Обговорення ваших ідей та концепцій.</li>
+          <li>Допомога у виборі стилю та розміру татуювання.</li>
+          <li>Консультація щодо місця розташування татуювання.</li>
+          <li>Відповіді на всі ваші запитання щодо процесу та догляду.</li>
+        </ul>
+        <button
+          class="modal__button button"
+          data-service="Консультація"
+          data-modal-open="sign-up"
+          aria-controls="sign-up"
+        >
+          Записатися на консультацію
+        </button>
+      </div>
+    </div>
+    <!-- Image modal -->
+    <div class="image-modal">
+      <span class="image-modal__close">&times;</span>
+      <img class="image-modal__content" />
+    </div>
+    <!-- Scroll to top button -->
+    <button class="scroller" aria-label="На початок сторінки">
+      <svg class="scroller__icon">
+        <use xlink:href="./img/icons.svg#icon-arrow"></use>
+      </svg>
+    </button>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

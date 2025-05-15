@@ -1,0 +1,290 @@
+.form {
+  &__group {
+    position: relative;
+    margin-bottom: 1.2rem;
+    width: 100%;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: 2px solid var(--color-divider);
+    border-radius: var(--border-radius-md);
+    background: url('../img/pattern.svg') repeat var(--color-bg);
+    outline: none;
+    color: var(--color-muted);
+    box-shadow: var(--box-shadow);
+    line-height: inherit;
+    padding: 12px;
+
+    &:focus {
+      border-color: var(--color-muted);
+    }
+    &:hover {
+      box-shadow: 0 0 2px var(--color-muted);
+    }
+  }
+
+  &__textarea {
+    field-sizing: content;
+    min-height: 104px;
+    height: auto;
+    max-height: 320px;
+    resize: vertical;
+  }
+
+  &__label {
+    position: absolute;
+    top: 26px;
+    left: 12px;
+    transform: translateY(-50%);
+    color: var(--color-placeholder);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    background: var(--color-bg);
+    padding: 0 4px;
+  }
+
+  /* Коли фокус або введено текст */
+  &__input:focus + &__label,
+  &__input:not(:placeholder-shown) + &__label,
+  &__input:valid + &__label,
+  &__textarea:focus + &__label,
+  &__textarea:not(:placeholder-shown) + &__label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+    background: linear-gradient(180deg, var(--color-ui-dark) 0%, var(--color-bg) 100%);
+    color: var(--color-text);
+  }
+
+  &__checkbox {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      height: 0;
+      width: 0;
+
+      &:focus + .form__checkmark {
+        border-color: var(--color-muted);
+      }
+    }
+  }
+  &__checkmark {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: var(--color-bg);
+    border-radius: var(--border-radius-sm);
+    border: 2px solid var(--color-divider);
+    transition: background-color 0.2s ease-in-out;
+
+    /* Стиль для відображення галочки */
+    &::after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 6.5px;
+      top: 2.5px;
+      width: 5px;
+      height: 10px;
+      border: solid var(--color-divider);
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+  &__checkbox-text {
+    margin-left: 10px;
+    color: var(--color-muted);
+  }
+
+  /* Стиль при наведенні курсора */
+  &__checkbox:hover input ~ .form__checkmark {
+    box-shadow: 0 0 2px var(--color-muted);
+  }
+
+  /* Стиль, коли чекбокс активований */
+  &__checkbox input:checked ~ .form__checkmark {
+    background-color: var(--color-text);
+  }
+
+  /* Відображення галочки, коли чекбокс активований */
+  &__checkbox input:checked ~ .form__checkmark::after {
+    display: inline-block;
+  }
+
+  /* Стиль для фокусу (за бажанням) */
+  &__checkbox input:focus ~ .form__checkmark {
+    border-color: var(--color-muted);
+  }
+
+  &__button {
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 12px;
+    line-height: inherit;
+    position: relative;
+    color: var(--color-ui-dark);
+    background-color: var(--color-text);
+    border: none;
+    box-shadow: var(--box-shadow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+
+    &--success {
+      background-color: var(--color-success);
+      color: var(--color-text);
+    }
+    &:hover:not(:disabled) {
+      transform: scale(1.02);
+    }
+
+    &:disabled {
+      cursor: not-allowed !important;
+    }
+
+    &:disabled:not(.form__button--success) {
+      background-color: var(--color-divider);
+      color: var(--color-placeholder);
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    &-text,
+    &-success {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    &-text.hidden,
+    &-success[hidden] {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+
+    &-success[hidden] {
+      display: none !important;
+    }
+
+    &-success:not([hidden]) {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &-check {
+      width: 1.2em;
+      height: 1.2em;
+      stroke-dasharray: 24;
+      stroke-dashoffset: 24;
+      animation: draw-check 0.5s ease forwards;
+    }
+
+    @keyframes draw-check {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    &-success-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      animation: typing 1.5s steps(20, end) forwards, blink-caret 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__phone-prefix {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5em 0;
+    color: var(--color-placeholder);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &__input[type='tel'] {
+    padding-left: 47px;
+  }
+
+  &__input[type='tel']:focus + .form__phone-prefix,
+  &__input[type='tel']:not(:placeholder-shown) + .form__phone-prefix,
+  &__input[type='tel'].has-value + .form__phone-prefix {
+    opacity: 1;
+  }
+
+  &__error-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    text-align: end;
+    width: 100%;
+    font-size: 0.8em;
+    color: var(--color-accent);
+    pointer-events: none;
+  }
+
+  &__input--error,
+  &__checkbox &__input--error ~ &__checkmark {
+    border: 2px solid var(--color-accent-dark);
+  }
+
+  &__input--error:focus,
+  &__checkbox &__input--error:focus ~ &__checkmark {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 2px var(--color-accent);
+  }
+}
+
+// fix autocomplete in Chrome
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #111 inset; /* або твій темний фон */
+  -webkit-text-fill-color: var(--color-muted); /* або твій текст */
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--color-text) !important;
+}

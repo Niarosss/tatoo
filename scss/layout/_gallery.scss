@@ -1,0 +1,121 @@
+@use '../abstracts' as *;
+
+.gallery {
+  padding: 50px 0;
+
+  &__wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+
+  &__brick {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+
+    &:after {
+      box-shadow: inset 1px 1px 20px 0px #0d0d0d;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      border-radius: var(--border-radius-lg);
+    }
+
+    &:hover {
+      cursor: zoom-in;
+
+      & .gallery__img {
+        filter: brightness(1);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 542px;
+    border-radius: var(--border-radius-lg);
+    will-change: filter;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+    object-fit: cover;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    color: var(--color-ui-dark);
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-muted);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    will-change: transform;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: var(--color-text);
+    }
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+      transition: transform 0.1s ease;
+    }
+
+    &-icon {
+      fill: var(--color-ui-dark);
+      height: 18px;
+      width: 18px;
+    }
+
+    &--next &-icon {
+      transform: rotate(90deg) translateY(-1.5px);
+    }
+    &--prev &-icon {
+      transform: rotate(270deg) translateY(-1.5px);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-muted);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &--active {
+        background-color: var(--color-text);
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: 40px;
+  }
+}

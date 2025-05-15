@@ -1,0 +1,110 @@
+.faq {
+  padding: 50px 0;
+
+  &__list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    border: 1px solid rgba(48, 48, 48, 0.6);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+
+    &:hover,
+    &:has(button:focus-visible) {
+      .faq__icon::before,
+      .faq__icon::after {
+        animation: pulse-shadow 1.5s infinite ease-in-out;
+        background-color: var(--color-accent);
+      }
+    }
+    &:has(button:focus-visible) {
+      outline: var(--color-text) solid 2px;
+    }
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--color-ui-dark);
+    color: var(--color-text);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+
+    &.active .faq__icon::after {
+      transform: translateX(-50%) rotate(90deg);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+    will-change: transform;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--color-text);
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      border-radius: 4px;
+    }
+
+    &::before {
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Анімація розгортання */
+    padding: 0 15px;
+
+    &.open {
+      max-height: 500px;
+      padding: 15px;
+    }
+
+    &-text {
+      margin: 0;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+  }
+}
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 4px var(--color-accent);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--color-accent-dark);
+  }
+  100% {
+    box-shadow: 0 0 4px var(--color-accent);
+  }
+}

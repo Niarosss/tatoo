@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+.services {
+  padding: 50px 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    gap: 2rem;
+    color: var(--color-muted);
+
+    @include respond-max(lg) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    background-color: var(--color-ui-dark);
+    height: 280px;
+    border-radius: var(--border-radius-lg);
+    padding: 1.4rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-max(md) {
+      height: 200px;
+      padding: 1.2rem;
+    }
+    @include respond-max(sm) {
+      padding: 1rem;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+      box-shadow: 0 0 12px var(--color-accent);
+    }
+
+    &:hover .services__icon {
+      transform: rotate3d(30, 30, 30, 360deg);
+      transition: all 0.3s ease;
+    }
+
+    &-title {
+      color: var(--color-text);
+      font-size: 1.2rem;
+      font-weight: var(--heading-h3-font-weight);
+      line-height: var(--heading-h3-line-height);
+      letter-spacing: var(--letter-spacing-header);
+      margin-bottom: 0.8rem;
+      @include respond-max(md) {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+      }
+    }
+    &-text {
+      font-size: 0.9rem;
+      @include respond-max(md) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  &__icon {
+    width: 64px;
+    height: 64px;
+    fill: var(--color-accent);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+
+    @include respond-max(xl) {
+      margin-bottom: 0.7rem;
+    }
+    @include respond-max(md) {
+      width: 56px;
+      height: 56px;
+    }
+    @include respond-max(sm) {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
