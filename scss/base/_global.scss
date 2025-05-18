@@ -1,6 +1,10 @@
-html {
+html,
+body {
+  min-height: 100dvh;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
 body {
   background: url('../img/pattern.svg') repeat var(--color-bg);
   font-family: var(--font-base);
@@ -9,7 +13,6 @@ body {
   font-weight: var(--font-weight-normal);
   color: var(--color-text);
   letter-spacing: var(--letter-spacing-text);
-  overflow-x: hidden;
 }
 
 .container {

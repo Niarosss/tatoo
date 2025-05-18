@@ -16,7 +16,7 @@
 }
 
 .slide-up {
-  transform: translateY(20px);
+  transform: translateY(30px);
 
   &.appeared {
     opacity: 1;
@@ -26,7 +26,7 @@
 }
 
 .slide-left {
-  transform: translateX(-20px);
+  transform: translateX(-30px);
 
   &.appeared {
     opacity: 1;
@@ -36,7 +36,7 @@
 }
 
 .slide-right {
-  transform: translateX(20px);
+  transform: translateX(30px);
 
   &.appeared {
     opacity: 1;
@@ -76,7 +76,7 @@
 }
 
 .fade-down {
-  transform: translateY(-20px);
+  transform: translateY(-30px);
 
   &.appeared {
     opacity: 1;
