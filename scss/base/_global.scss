@@ -9,6 +9,7 @@ body {
   font-weight: var(--font-weight-normal);
   color: var(--color-text);
   letter-spacing: var(--letter-spacing-text);
+  overflow-x: hidden;
 }
 
 .container {
@@ -16,7 +17,6 @@ body {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 24px;
-  overflow-x: hidden;
 }
 ::selection {
   background: var(--color-muted);

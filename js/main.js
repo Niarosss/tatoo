@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const appearAnimator = new AppearAnimation({ threshold: 0.5 });
+  const appearAnimator = new AppearAnimation({ threshold: 0.3 });
   appearAnimator.observeElements(
     '.fade-in, .slide-up, .slide-left, .slide-right, .zoom-in, .zoom-out, .rotate-in, .fade-down, .blur-in',
   );
