@@ -553,7 +553,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
   let autoScrollInterval;
-  let isHovered = false;
+  let isInteracting = false;
+  let interactionTimeout;
 
   function getSlidesPerView() {
     if (window.innerWidth <= 768) return 1;
@@ -620,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startAutoScroll() {
     if (!autoScrollInterval) {
       autoScrollInterval = setInterval(() => {
-        if (!isHovered) goToNextSlide();
+        if (!isInteracting) goToNextSlide();
       }, 5000);
     }
   }
@@ -630,16 +631,34 @@ document.addEventListener('DOMContentLoaded', () => {
     autoScrollInterval = null;
   }
 
-  wrapper.addEventListener('mouseenter', () => (isHovered = true));
-  wrapper.addEventListener('mouseleave', () => (isHovered = false));
-  galleryControls.addEventListener('mouseenter', () => (isHovered = true));
-  galleryControls.addEventListener('mouseleave', () => (isHovered = false));
+  function handleInteractionStart() {
+    isInteracting = true;
+    clearTimeout(interactionTimeout);
+  }
 
+  function handleInteractionEnd() {
+    interactionTimeout = setTimeout(() => {
+      isInteracting = false;
+    }, 3000); // резервне скидання через 3 секунди
+  }
+
+  // Використовуємо лише pointer events
+  [wrapper, galleryControls].forEach(el => {
+    el.addEventListener('pointerenter', handleInteractionStart);
+    el.addEventListener('pointerleave', handleInteractionEnd);
+    el.addEventListener('pointerdown', handleInteractionStart);
+    el.addEventListener('pointerup', handleInteractionEnd);
+  });
+
+  // Спостерігач видимості
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) startAutoScroll();
-        else stopAutoScroll();
+        if (entry.isIntersecting) {
+          startAutoScroll();
+        } else {
+          stopAutoScroll();
+        }
       });
     },
     { threshold: 0.5 },

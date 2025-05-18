@@ -32,20 +32,20 @@
 
     &--sketch {
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%),
-        url('/img/sketch-card.webp') center / cover no-repeat;
+        url('../img/sketch-card.webp') center / cover no-repeat;
       will-change: transform;
     }
     &--tattoo {
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%),
-        url('/img/tattoo-card.webp') center / cover no-repeat;
+        url('../img/tattoo-card.webp') center / cover no-repeat;
     }
     &--correction {
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%),
-        url('/img/correction-card.webp') center / cover no-repeat;
+        url('../img/correction-card.webp') center / cover no-repeat;
     }
     &--consultation {
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%),
-        url('/img/consultation-card.webp') center / cover no-repeat;
+        url('../img/consultation-card.webp') center / cover no-repeat;
     }
 
     @include respond-max(md) {
