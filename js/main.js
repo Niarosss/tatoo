@@ -573,14 +573,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateSliderPosition() {
     const slideWidth = bricks[0].offsetWidth;
+    const gap = 20;
     galleryContainer.style.transform = `translateX(-${
-      currentIndex * (slideWidth + 20)
+      currentIndex * (slideWidth + gap)
     }px)`;
     updatePagination();
   }
 
   function updatePagination() {
-    const totalPages = Math.ceil(bricks.length / getSlidesPerView());
+    const slidesPerView = getSlidesPerView();
+    const totalPages = bricks.length - slidesPerView + 1; // кількість позицій
     pagination.innerHTML = '';
 
     for (let i = 0; i < totalPages; i++) {
@@ -596,13 +598,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function goToNextSlide() {
-    const maxIndex = Math.ceil(bricks.length / getSlidesPerView()) - 1;
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = bricks.length - slidesPerView;
     currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
     updateSliderPosition();
   }
 
   function goToPrevSlide() {
-    const maxIndex = Math.ceil(bricks.length / getSlidesPerView()) - 1;
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = bricks.length - slidesPerView;
     currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
     updateSliderPosition();
   }
