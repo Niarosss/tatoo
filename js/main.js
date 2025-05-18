@@ -665,10 +665,29 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(wrapper);
 
   let touchStartX = 0;
+  let touchStartY = 0;
+  let isSwiping = false;
+
   wrapper.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isSwiping = false;
   });
+
+  wrapper.addEventListener('touchmove', e => {
+    const diffX = e.touches[0].clientX - touchStartX;
+    const diffY = e.touches[0].clientY - touchStartY;
+
+    // Визначаємо, чи це горизонтальний свайп
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      isSwiping = true;
+      e.preventDefault(); // зупиняємо вертикальний скролл сторінки
+    }
+  });
+
   wrapper.addEventListener('touchend', e => {
+    if (!isSwiping) return;
+
     const diffX = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(diffX) > 50) {
       if (diffX > 0) goToPrevSlide();
