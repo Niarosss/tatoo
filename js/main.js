@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Burger menu functionality ---
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
-  const body = document.body;
-  const burgerActiveClass = 'active';
   let isBurgerMenuOpen = false;
   const scrollToTopBtn = document.querySelector('.scroller');
 
