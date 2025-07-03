@@ -8,7 +8,6 @@ This repository contains the source code for a modern, responsive landing page f
 
 ### 🌐 Live Demo
 👉 [https://niarosss.github.io/tatoo/](https://niarosss.github.io/tatoo/)
----
 
 ### 🧰 Technologies Used
 
@@ -23,8 +22,6 @@ This repository contains the source code for a modern, responsive landing page f
 
 ### 🌐 Онлайн-версія
 👉 [https://niarosss.github.io/tatoo/](https://niarosss.github.io/tatoo/)
-
----
 
 ### 🧰 Використані технології
 
