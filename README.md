@@ -7,7 +7,7 @@
 This repository contains the source code for a modern, responsive landing page for a tattoo studio. The page features a full-screen hero section, a dynamic image gallery slider, a booking form, and contact information, all enhanced with smooth animations and parallax effects.
 
 ### 🌐 Live Demo
-👉 [https://niarosss.github.io/tatoo/](https://niarosss.github.io/tatoo/)
+👉 [https://niarosss.github.io/tatoo/]{:target="_blank"}(https://niarosss.github.io/tatoo/)
 
 ---
 
