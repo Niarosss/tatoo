@@ -13,18 +13,22 @@ parallax effects.
 
 ## Features
 
-- **Responsive Design:** A fluid layout that adapts seamlessly to desktop, tablet, and mobile screens.
+- **Responsive Design:** A fluid layout that adapts seamlessly to desktop, tablet, and
+  mobile screens.
 - **Full-Screen Hero Section:** Grabs visitors' attention from the very first second.
 - **Interactive UI:**
   - Smooth, animated FAQ accordion for concisely displaying information.
   - Parallax scrolling effects on the hero background.
   - Subtle on-scroll reveal animations for content blocks.
   - An optional and festive falling snow animation for visual flair.
-- **Dark/Light Mode:** Automatically detects system theme preferences and allows manual toggling. The user's choice is saved in local storage for persistence.
+- **Dark/Light Mode:** Automatically detects system theme preferences and allows manual
+  toggling. The user's choice is saved in local storage for persistence.
 - **Dynamic Gallery:** A slider to showcase tattoo artworks.
 - **Booking Form:** An interactive form for booking a session.
-- **Contact Information:** Provides easy access to phone numbers, email, and social media links.
-- **Animations and Parallax Effects:** Smooth visual effects that enhance the user experience.
+- **Contact Information:** Provides easy access to phone numbers, email, and social media
+  links.
+- **Animations and Parallax Effects:** Smooth visual effects that enhance the user
+  experience.
 
 ## Technologies Used
 
@@ -35,17 +39,17 @@ parallax effects.
 The codebase is organized for clarity and ease of maintenance:
 
 ```
-/
-├── index.html            # The main HTML file containing all content and structure.
-├── css/                  # Compiled CSS files.
-├── scss/                 # Source SCSS files organized by function.
-│   ├── abstracts/        # Contains utility files that do not generate CSS directly, such as variables, mixins, and breakpoints for responsiveness.
-│   ├── base/             # Holds the foundational styles for the entire website, including a browser reset, global rules, animations, and typography styles.
-│   ├── components/       # Stores styles for individual, reusable elements like buttons, forms, and modals.
-│   └── layout/           # Contains styles that define the structure and layout of different sections of the page, such as the header, footer, gallery, and other content sections.
-├── js/                   # JavaScript files.
-│   └── main.js           # Core application logic, animations, scrolling, mobile menu behavior, and other dynamic elements.
-├── img/                  # Background images, logos, photo and other assets.
-├── fonts/                # (Oswald fonts).
-└── video/                # This folder contains video files that are likely used for background visual effects.
+├── 📁 css/             # Compiled CSS files.
+├── 📁 fonts/           # (Oswald fonts).
+├── 📁 img/             # Background images, logos, photo and other assets.
+├── 📁 js/              # JavaScript files.
+│   └── 📄 main.js      # Core application logic, animations, scrolling, mobile menu behavior, and other dynamic elements.
+├── 📁 scss/            # Source SCSS files organized by function.
+│   ├── 📁 abstracts/   # Contains utility files that do not generate CSS directly, such as variables, mixins, and breakpoints for responsiveness.
+│   ├── 📁 base/        # Holds the foundational styles for the entire website, including a browser reset, global rules, animations, and typography styles.
+│   ├── 📁 components/  # Stores styles for individual, reusable elements like buttons, forms, and modals.
+│   ├── 📁 layout/      # Contains styles that define the structure and layout of different sections of the page, such as the header, footer, gallery, and other content sections.
+│   └── 🎨 main.scss    # Main SCSS file importing all partials.
+├── 📁 video/           # This folder contains video files that are likely used for background visual effects.
+└── 🌐 index.html       # The main HTML file containing all
 ```
