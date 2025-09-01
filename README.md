@@ -13,23 +13,18 @@ parallax effects.
 
 ## Features
 
-- **Responsive Design:** A fluid layout that adapts seamlessly to desktop, tablet, and
-  mobile screens.
+- **Responsive Design:** A fluid layout that adapts seamlessly to desktop, tablet, and mobile screens.
 - **Full-Screen Hero Section:** Grabs visitors' attention from the very first second.
 - **Interactive UI:**
   - Smooth, animated FAQ accordion for concisely displaying information.
   - Parallax scrolling effects on the hero background.
   - Subtle on-scroll reveal animations for content blocks.
   - An optional and festive falling snow animation for visual flair.
-- **User Settings & Theming:**
-  - **Dark/Light Mode:** Automatically detects system theme preferences and allows manual
-    toggling. The user's choice is saved in local storage for persistence.
+- **Dark/Light Mode:** Automatically detects system theme preferences and allows manual toggling. The user's choice is saved in local storage for persistence.
 - **Dynamic Gallery:** A slider to showcase tattoo artworks.
 - **Booking Form:** An interactive form for booking a session.
-- **Contact Information:** Provides easy access to phone numbers, email, and social media
-  links.
-- **Animations and Parallax Effects:** Smooth visual effects that enhance the user
-  experience.
+- **Contact Information:** Provides easy access to phone numbers, email, and social media links.
+- **Animations and Parallax Effects:** Smooth visual effects that enhance the user experience.
 
 ## Technologies Used
 
